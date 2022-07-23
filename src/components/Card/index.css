@@ -1,0 +1,75 @@
+.Card {
+  width: 560px;
+  height: 90px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  border-radius: 4px;
+  background-color: rgb(248, 249, 250);
+}
+
+.Card:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.Card--info {
+  justify-self: flex-start;
+  margin-left: 0;
+  margin-right: 300px;
+}
+
+.Card--color {
+  width: 4px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(3, 184, 152);
+  border-radius: 4px 0px 0px 4px;
+  justify-self: flex-start;
+}
+
+.Card--title {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(33, 37, 41);
+}
+
+.Card--type {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(52, 58, 64);
+}
+
+.Card--value {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(33, 37, 41);
+  margin-top: 20px;
+}
+
+.Card--info__value {
+  width: 100px;
+  display: flex;
+  justify-self: flex-end;
+  margin-right: 0;
+  justify-content: space-between;
+  margin-right: 1rem;
+  align-self: flex-start;
+}
+
+.Card--info__value button {
+  /* align-self: flex-start; */
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 2.46px;
+}
+
+.Card--info__value button:hover {
+  background-color: rgb(52, 58, 64);
+  color: rgb(248, 249, 250);
+}

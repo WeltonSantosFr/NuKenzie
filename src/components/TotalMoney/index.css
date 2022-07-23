@@ -1,0 +1,31 @@
+.TotalMoney {
+  display: flex;
+  width: 370px;
+  height: 100px;
+  border-radius: 4px;
+  border: 1px solid rgb(233, 236, 239);
+}
+
+.TotalMoney h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(33, 37, 41);
+}
+
+.TotalMoney--info {
+  margin-left: 25px;
+}
+
+.TotalMoney--desc {
+  color: rgb(52, 58, 64);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.TotalMoney--value {
+  color: rgb(253, 55, 126);
+  font-weight: 700;
+  font-size: 16px;
+  margin-right: 0;
+  margin-left: 115px;
+}

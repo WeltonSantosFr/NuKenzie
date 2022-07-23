@@ -1,0 +1,57 @@
+.List {
+  display: flex;
+  flex-direction: column;
+  width: 560px;
+  height: 630px;
+  gap: 32px;
+}
+
+.List--header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.List--header__button {
+  width: 90px;
+  height: 40px;
+  background-color: rgb(233, 236, 239);
+  color: rgb(52, 58, 64);
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: ease 500ms;
+}
+
+.List--header__button:hover {
+  background-color: rgb(52, 58, 64);
+  color: rgb(248, 249, 250);
+}
+
+.List--header__todos {
+  width: 70px;
+  background-color: rgb(253, 55, 126);
+  color: rgb(255, 255, 255);
+  border: none;
+  transition: ease 500ms;
+}
+
+.List--header__todos:hover {
+  background-color: rgb(227, 73, 129);
+  color: rgb(248, 249, 250);
+}
+
+.List--header__buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+}
+
+.List--noTransactions {
+  font-size: 22px;
+  font-weight: 700;
+  color: rgb(52, 58, 64);
+}
