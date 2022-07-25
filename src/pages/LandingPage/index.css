@@ -5,6 +5,7 @@
 }
 
 .LandingPage {
+  justify-self: center;
   align-self: center;
   margin: 0 150px 0 150px;
   height: 100%;
@@ -13,13 +14,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .LandingPage--info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 30%;
 }
 
 .LandingPage--title {
@@ -59,7 +61,39 @@
   background-color: rgb(227, 73, 129);
 }
 
+.LandingPage--img {
+  display: flex;
+  width: 40%;
+}
+
 .LandingPage--img LandingPageImg {
-  width: 600px;
-  height: 600px;
+  margin: 0;
+  align-self: flex-end;
+  justify-self: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .LandingPage {
+    flex-direction: column;
+    margin: 0 15px 0 15px;
+  }
+
+  .LandingPage--info {
+    align-self: center;
+    justify-self: center;
+
+    width: 80%;
+  }
+
+  .LandingPage--img {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .LandingPage--info {
+    width: 100%;
+  }
 }
