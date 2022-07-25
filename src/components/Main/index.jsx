@@ -19,7 +19,10 @@ const Main = ({ listTransactions, setListTransactions }) => {
           <div></div>
         )}
       </div>
-      <List listTransactions={listTransactions} />
+      <List
+        listTransactions={listTransactions}
+        setListTransactions={setListTransactions}
+      />
     </div>
   );
 };

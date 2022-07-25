@@ -29,3 +29,13 @@
   margin-right: 0;
   margin-left: 115px;
 }
+
+@media (max-width: 420px) {
+  .TotalMoney {
+    width: 300px;
+  }
+
+  .TotalMoney--value {
+    margin-left: 50px;
+  }
+}

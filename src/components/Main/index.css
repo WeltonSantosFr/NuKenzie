@@ -13,3 +13,12 @@
   flex-direction: column;
   gap: 16px;
 }
+
+@media (max-width: 1000px) {
+  .Main {
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 30px;
+    align-items: center;
+  }
+}

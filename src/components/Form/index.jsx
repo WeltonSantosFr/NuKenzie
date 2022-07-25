@@ -1,15 +1,33 @@
+import { useState } from "react";
 import "./index.css";
 
 export default function Form({ listTransactions, setListTransactions }) {
+  const [description, setDescription] = useState("");
+  const [type, setType] = useState("");
+  const [value, setValue] = useState("");
+
+  function handleForm() {
+    type === "saida"
+      ? setListTransactions([
+          ...listTransactions,
+          { description: description, type: type, value: -value },
+        ])
+      : setListTransactions([
+          ...listTransactions,
+          { description: description, type: type, value: value },
+        ]);
+  }
   return (
-    <form className="Form">
+    <form className="Form" onSubmit={(e) => handleForm(e.preventDefault())}>
       <div className="Form--descDiv">
         <label htmlFor="descricao">Descrição</label>
         <input
           className="Form--desc"
           type="text"
-          name="descricao"
+          name="description"
           placeholder="Digite aqui sua descrição"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
         <span>Ex: compra de roupas</span>
       </div>
@@ -17,12 +35,24 @@ export default function Form({ listTransactions, setListTransactions }) {
       <div className="Form--div">
         <div>
           <label htmlFor="valor">Valor</label>
-          <input type="number" name="valor" placeholder="Valor" />
+          <input
+            type="number"
+            name="value"
+            placeholder="1"
+            value={value}
+            onChange={(e) => setValue(Number(e.target.value))}
+          />
         </div>
 
         <div>
           <label htmlFor="tipo">Tipo de valor</label>
-          <select id="" name="tipo">
+          <select
+            id=""
+            name="type"
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+          >
+            <option>Selecione um tipo</option>
             <option className="Form--select__option" value="entrada">
               Entrada
             </option>

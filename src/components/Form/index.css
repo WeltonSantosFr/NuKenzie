@@ -106,3 +106,22 @@ select {
 .Form--select__option:hover {
   background-color: rgb(233, 236, 239);
 }
+
+@media (max-width: 420px) {
+  .Form {
+    width: 300px;
+    align-self: center;
+  }
+
+  .Form--desc {
+    width: 250px;
+  }
+
+  .Form--div input {
+    width: 100px;
+  }
+
+  .Form button {
+    width: 250px;
+  }
+}

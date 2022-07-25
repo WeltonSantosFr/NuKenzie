@@ -55,3 +55,30 @@
   font-weight: 700;
   color: rgb(52, 58, 64);
 }
+
+@media (max-width: 1200px) {
+  .List {
+    width: 500px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .List {
+    width: 400px;
+  }
+}
+
+@media (max-width: 420px) {
+  .List {
+    width: 300px;
+    align-self: center;
+  }
+
+  .List--header {
+    flex-direction: column;
+  }
+
+  .List--noTransactions {
+    margin-left: 1rem;
+  }
+}
