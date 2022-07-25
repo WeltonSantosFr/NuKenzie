@@ -52,7 +52,6 @@ export default function Form({ listTransactions, setListTransactions }) {
             value={type}
             onChange={(e) => setType(e.target.value)}
           >
-            <option>Selecione um tipo</option>
             <option className="Form--select__option" value="entrada">
               Entrada
             </option>
