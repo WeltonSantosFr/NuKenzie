@@ -3,22 +3,21 @@ import "./index.css";
 
 export default function Form({ listTransactions, setListTransactions }) {
   const [description, setDescription] = useState("");
-  const [type, setType] = useState("");
+  const [type, setType] = useState();
   const [value, setValue] = useState("");
 
   function handleForm() {
-    type === "saida"
-      ? setListTransactions([
-          ...listTransactions,
-          { description: description, type: type, value: -value },
-        ])
-      : setListTransactions([
-          ...listTransactions,
-          { description: description, type: type, value: value },
-        ]);
+    const transaction = {
+      description,
+      value,
+      type,
+    };
+
+    setListTransactions([...listTransactions, transaction]);
   }
+
   return (
-    <form className="Form" onSubmit={(e) => handleForm(e.preventDefault())}>
+    <div className="Form">
       <div className="Form--descDiv">
         <label htmlFor="descricao">Descrição</label>
         <input
@@ -47,11 +46,11 @@ export default function Form({ listTransactions, setListTransactions }) {
         <div>
           <label htmlFor="tipo">Tipo de valor</label>
           <select
-            id=""
             name="type"
             value={type}
             onChange={(e) => setType(e.target.value)}
           >
+            <option value="selecione">Selecione um tipo</option>
             <option className="Form--select__option" value="entrada">
               Entrada
             </option>
@@ -61,7 +60,7 @@ export default function Form({ listTransactions, setListTransactions }) {
           </select>
         </div>
       </div>
-      <button type="submit">Inserir Valor</button>
-    </form>
+      <button onClick={handleForm}>Inserir Valor</button>
+    </div>
   );
 }

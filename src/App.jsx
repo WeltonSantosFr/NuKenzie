@@ -6,15 +6,24 @@ import LandingPage from "./pages/LandingPage";
 function App() {
   const [listTransactions, setListTransactions] = useState([]);
   const [page, setPage] = useState(false);
+
+  const iniciar = () => {
+    setPage(true);
+  };
+
+  const finalizar = () => {
+    setPage(false);
+  };
   return (
     <div className="App">
-      {page === false ? (
-        <LandingPage setPage={setPage} />
-      ) : (
+      {page ? (
         <Home
           listTransactions={listTransactions}
           setListTransactions={setListTransactions}
+          finalizar={finalizar}
         />
+      ) : (
+        <LandingPage iniciar={iniciar} />
       )}
     </div>
   );

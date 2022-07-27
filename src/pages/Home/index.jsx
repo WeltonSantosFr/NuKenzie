@@ -3,10 +3,10 @@ import Header from "../../components/Header";
 import Main from "../../components/Main";
 import "./index.css";
 
-const Home = ({ listTransactions, setListTransactions }) => {
+const Home = ({ listTransactions, setListTransactions, finalizar }) => {
   return (
     <div className="Home">
-      <Header />
+      <Header finalizar={finalizar} />
       <Main
         listTransactions={listTransactions}
         setListTransactions={setListTransactions}

@@ -11,7 +11,10 @@ const List = ({ listTransactions, setListTransactions }) => {
 
   function filtraEntradas() {
     setFiltro(
-      listTransactions.filter((transaction) => transaction.type === "entrada")
+      listTransactions.filter(
+        (transaction) =>
+          transaction.type === "entrada" || transaction.type === undefined
+      )
     );
   }
 

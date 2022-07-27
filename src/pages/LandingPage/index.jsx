@@ -1,10 +1,7 @@
 import LandingPageImg from "../../components/LandingPageImg";
 import "./index.css";
 
-export default function LandingPage({ setPage }) {
-  function handleButton() {
-    setPage(true);
-  }
+export default function LandingPage({ iniciar }) {
   return (
     <div className="container">
       <div className="LandingPage">
@@ -16,7 +13,7 @@ export default function LandingPage({ setPage }) {
           <span className="LandingPage--secondary">
             de forma rapida e segura
           </span>
-          <button onClick={handleButton}>Iniciar</button>
+          <button onClick={iniciar}>Iniciar</button>
         </div>
         <div className="LandingPage--img">
           <LandingPageImg />
