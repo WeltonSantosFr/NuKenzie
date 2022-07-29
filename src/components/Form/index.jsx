@@ -3,8 +3,8 @@ import "./index.css";
 
 export default function Form({ listTransactions, setListTransactions }) {
   const [description, setDescription] = useState("");
-  const [type, setType] = useState();
   const [value, setValue] = useState("");
+  const [type, setType] = useState("");
 
   function handleForm() {
     const transaction = {
@@ -13,7 +13,9 @@ export default function Form({ listTransactions, setListTransactions }) {
       type,
     };
 
-    setListTransactions([...listTransactions, transaction]);
+    if (type === "entrada" || type === "saida") {
+      setListTransactions([...listTransactions, transaction]);
+    }
   }
 
   return (
@@ -38,7 +40,7 @@ export default function Form({ listTransactions, setListTransactions }) {
             type="number"
             name="value"
             placeholder="1"
-            value={value}
+            value={value === 0 ? "" : value}
             onChange={(e) => setValue(Number(e.target.value))}
           />
         </div>
@@ -50,7 +52,7 @@ export default function Form({ listTransactions, setListTransactions }) {
             value={type}
             onChange={(e) => setType(e.target.value)}
           >
-            <option value="selecione">Selecione um tipo</option>
+            <option value="">Selecione um tipo</option>
             <option className="Form--select__option" value="entrada">
               Entrada
             </option>

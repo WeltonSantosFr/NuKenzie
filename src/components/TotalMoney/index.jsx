@@ -3,6 +3,7 @@ import React from "react";
 import "./index.css";
 
 const TotalMoney = ({ listTransactions }) => {
+  console.log(typeof listTransactions[0].value);
   return (
     <div className="TotalMoney">
       <div className="TotalMoney--info">
@@ -11,9 +12,14 @@ const TotalMoney = ({ listTransactions }) => {
       </div>
       <div>
         <p className="TotalMoney--value">
-          ${" "}
           {listTransactions.length > 0
-            ? listTransactions.reduce((acc, atual) => acc + atual.value, 0)
+            ? listTransactions.reduce(
+                (acc, atual) =>
+                  atual.type === "entrada"
+                    ? acc + atual.value
+                    : acc - atual.value,
+                0
+              )
             : 0}
         </p>
       </div>
